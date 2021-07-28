@@ -9,6 +9,10 @@
   --font-size-body: 1.8rem;
   --font-size-title: 5.6rem;
   --wrapper: max(2rem, 17.4vw - 20rem / 2);
+  --small: 31.188rem; 
+  --medium: 43.688rem; 
+  --large: 62.438rem; 
+  --xlarge: 87.438rem; 
 }
 
 /********** Reset **********/
@@ -51,12 +55,34 @@ a {
   cursor: pointer; 
 }
 
-p {
-  line-height: 1.6;
+a:hover {
+  text-decoration: underline;
 }
 
+p {
+  line-height: 27px;
+}
+
+/* ****** Utilities ****** */
+.btn {
+  background-color: var(--color-black);
+  border-color: transparent;
+  color: var(--color-white);
+  padding: 17px 23px;
+  border-radius: 5px;
+  max-width: 23.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transition: all 0.5s ease;
+  box-shadow: 0.20rem 0.20rem 0.3rem rgba(0, 0, 0, 0.25);
+}
+
+
 /* ****** Site Styles ****** */
-section {
+.hero {
   background-image: linear-gradient(
     120deg,
     var(--color-primary-bg) 0%,
@@ -65,20 +91,55 @@ section {
   padding: 40px var(--wrapper) 0;
 }
 
-header {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
 }
 
-nav {
+.nav {
   display: none;
 }
 
+.nav img {
+  cursor: pointer; 
+}
 
-@media screen and (min-width: 69.9rem) {
-  nav {
+span {
+  font-weight: 400;
+}
+
+.banner {
+  display: grid;
+  row-gap: 81px;
+}
+
+.banner-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  text-align: center;
+}
+
+.banner-title {
+  font-weight: 700;
+  font-size: var(--font-size-title);
+  color: var(--color-black); 
+}
+
+.banner-text {
+  max-width: 69.5rem;
+  margin: 0 auto;
+}
+
+.banner-btn {
+  align-self: center;
+  margin: 8px 0; 
+}
+
+@media screen and (min-width: 43.688rem) {
+  .nav {
     display: flex;
     align-items: center;
     column-gap: 2.4rem;
@@ -89,25 +150,6 @@ nav {
   }
 }
 
-@media screen and (min-width: 99.9rem) {}
+/* @media screen and (min-width: 99.9rem) {} */
 
 
-.btn {
-  background-color: var(--color-black);
-  border-color: transparent;
-  color: var(--color-white);
-  padding: 17px 17px;
-  border-radius: 5px;
-  max-width: 23.9rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-span {
-  font-weight: 400;
-}
-
-.btn:hover {
-  transition: all 0.5s ease;
-  box-shadow: 0.85rem 0.85rem 0.5rem rgba(0, 0, 0, 0.25);
-}
