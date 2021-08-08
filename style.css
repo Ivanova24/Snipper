@@ -8,7 +8,7 @@
   --font-body: "Poppins", sans-serif;
   --font-size-body: 1.8rem;
   --font-size-title: 5.6rem;
-  --font-size-subtitle: 3.6rem; 
+  --font-size-subtitle: 3.6rem;
   --wrapper: max(2rem, 17.4vw - 20rem / 2);
 }
 
@@ -49,7 +49,7 @@ table {
 }
 
 a {
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 a:hover {
@@ -60,9 +60,10 @@ p {
   line-height: 27px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 700;
-  color: var(--color-black); 
+  color: var(--color-black);
 }
 
 /* ****** Utilities ****** */
@@ -79,9 +80,64 @@ h1, h2 {
 
 .btn:hover {
   transition: all 0.5s ease;
-  box-shadow: 0.20rem 0.20rem 0.3rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.25);
 }
 
+/**  Menu **/
+.menu-btn {
+  cursor: pointer;
+}
+
+.menu-btn svg {
+  fill: var(--color-black);
+}
+
+.menu {
+  position: absolute;
+  left: 0;
+  top: 75px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 25px;
+  background-color: var(--color-white);
+  background-image: linear-gradient(
+    120deg,
+    var(--color-primary-bg) 0%,
+    var(--color-secondary-bg) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (min-width: 43.688rem) {
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 24px;
+    background-color: transparent;
+    background-image: none;
+    padding-block: 0;
+  }
+}
 
 /* ****** Site Styles ****** */
 .hero {
@@ -94,18 +150,15 @@ h1, h2 {
 }
 
 .header {
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
 }
 
-.nav {
-  display: none;
-}
-
-.nav img {
-  cursor: pointer; 
+.menu > img {
+  cursor: pointer;
 }
 
 span {
@@ -135,7 +188,7 @@ span {
 
 .banner-btn {
   align-self: center;
-  margin: 8px 0; 
+  margin: 8px 0;
 }
 
 .main {
@@ -148,7 +201,7 @@ span {
 .main-img {
   max-width: 432px;
   max-height: 396px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .main-article {
@@ -157,8 +210,8 @@ span {
 }
 
 .main-title {
-   font-size: var(--font-size-subtitle);
-   line-height: 54px;
+  font-size: var(--font-size-subtitle);
+  line-height: 54px;
 }
 
 .main-btn {
@@ -180,16 +233,6 @@ span {
 }
 
 @media screen and (min-width: 43.688rem) {
-  .nav {
-    display: flex;
-    align-items: center;
-    column-gap: 2.4rem;
-  }
-
-  svg {
-    display: none;
-  }
-
   .footer {
     display: flex;
     justify-content: space-between;
@@ -211,5 +254,3 @@ span {
     flex-basis: 628px;
   }
 }
-
-
